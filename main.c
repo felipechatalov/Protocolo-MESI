@@ -159,32 +159,7 @@ void switchCacheBlock(CacheSlot cache[], int mram[], int pos, CacheSlot* block){
         cache[pos].values[i].RAMaddress = block->values[i].RAMaddress; 
     }
 }
-// int TryToAccessAddress(int mram[], int slot, int update, CacheSlot cache[], Fila* FIFO){
-//     // cuida de toda a logica de acessar uma poiscao da memoria RAM e se deve ou nao copiar o bloco para a CACHE
-//     int pos, block;
-//     CacheSlot* ptr;
-//     // acessa a posicao da memoria RAM
-//     ptr = accessRAMSlot(slot, update, mram, &pos);
-//     printf("\nBloco acessado: ");
-//     printCacheSlot(ptr);
-//
-//     // caso o endereco ja se encontre na cache retorna 1
-//     if (isInsideCache(ptr->values[pos].RAMaddress, cache, &block)){
-//         if (update){
-//             cache[block].values[pos].value = ptr->values[pos].value;
-//             cache[block].values[pos].update = 1;
-//         }
-//         return 1;
-//     }
-//
-//     int new;
-//
-//     new = NextInLine(FIFO)->value;
-//     switchCacheBlock(cache, mram, new, ptr);
-//
-//     return 0;
-//
-// }
+
 int requestAccessToRAM(int mram[], int req, int update, Cache caches[], int src, Fila FIFO[]){
     int pos, block;
     CacheSlot* ptr;

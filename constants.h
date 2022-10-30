@@ -5,11 +5,17 @@
 
 
 #define RAM_TEST_ARRAY_SIZE 16
-#define MRAM_SIZE 64
-#define CACHE_SIZE 4 
+#define MRAM_SIZE 1024
+#define CACHE_SIZE 10 
 #define BLOCK_SIZE 4
 #define NULL_VALUE_FOR_CACHE -11
-#define NUMBER_OF_CACHES 2
+#define NUMBER_OF_CACHES 3
+
+// standard values for constants: 
+// RAM_TEST_ARRAY_SIZE = 100
+// MRAM_SIZE = 1024
+// CACHE_SIZE = 32
+// BLOCK_SIZE = 4
 
 // usado para a criacao de array para o teste automatico
 typedef struct InputObj{
@@ -34,9 +40,4 @@ typedef struct Cache{
     CacheSlot slots[CACHE_SIZE];
 }Cache;
 
-// standard values for constants: 
-// RAM_TEST_ARRAY_SIZE = 100
-// MRAM_SIZE = 1024
-// CACHE_SIZE = 32
-// BLOCK_SIZE = 4
 
